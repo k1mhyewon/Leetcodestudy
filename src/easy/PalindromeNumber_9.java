@@ -1,6 +1,6 @@
 package easy;
 
-public class palindromeNumber_9 {
+public class PalindromeNumber_9 {
     public static void main(String[] args) {
 
         int x = 100001;
