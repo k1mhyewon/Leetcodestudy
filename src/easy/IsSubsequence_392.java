@@ -10,8 +10,16 @@ public class IsSubsequence_392 {
     }
 
     public static boolean isSubsequence(String s, String t) {
+        int s_pointer = 0;
+        int t_pointer = 0;
 
+        while(s_pointer < s.length() && t_pointer < t.length()){
+            if(t.charAt(t_pointer) == s.charAt(s_pointer)){
+                s_pointer++;
+            }
+            t_pointer++;
+        }
 
-        return false;
+        return s_pointer == s.length();
     }
 }
