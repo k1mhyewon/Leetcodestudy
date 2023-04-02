@@ -16,14 +16,15 @@ public class SuccessfulPairsOfSpellsAndPotions_2300 {
     public static int[] successfulPairs(int[] spells, int[] potions, long success) {
         int[] result_arr = new int[spells.length];
 
-
         for(int i=0; i<spells.length; i++){
             int start = 0;
             int end = potions.length - 1;
 
             while(start <= end) {
                 int mid = (start + end) / 2;
-                if(potions[mid] * i < success){
+                long multi_res = Long.valueOf(potions[mid]) * Long.valueOf(spells[i]);
+
+                if(multi_res < success){
                     start = mid + 1;
                 }
                 else{
@@ -33,9 +34,6 @@ public class SuccessfulPairsOfSpellsAndPotions_2300 {
             result_arr[i] = potions.length - start;
         }
 
-        for(int j:result_arr) {
-            System.out.println(j);
-        }
 
         return result_arr;
     }
