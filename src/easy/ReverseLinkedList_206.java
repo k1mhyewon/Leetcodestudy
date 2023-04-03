@@ -1,11 +1,8 @@
 package easy;
 
-public class Again_ReverseLinkedList_206 {
-    public static void main(String[] args) {
+public class ReverseLinkedList_206 {
 
-        // https://www.youtube.com/watch?v=NhapasNIKuQ
-
-    }
+    // https://www.youtube.com/watch?v=NhapasNIKuQ
 
     public class ListNode {
         int val;
@@ -13,19 +10,20 @@ public class Again_ReverseLinkedList_206 {
         ListNode() {}
         ListNode(int val) { this.val = val; }
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
+      }
 
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
 
         while(head != null) {
-            ListNode next = head.next;
+            ListNode next_node = head.next;
             head.next = prev;
             prev = head;
-            head = next;
+            head = next_node;
         }
 
         return prev;
     }
+
 
 }
