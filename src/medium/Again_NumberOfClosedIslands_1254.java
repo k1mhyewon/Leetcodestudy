@@ -1,6 +1,7 @@
 package medium;
 
 public class Again_NumberOfClosedIslands_1254 {
+    // https://walkccc.me/LeetCode/problems/1254/
     public static void main(String[] args) {
         int[][] grid = {{1,1,1,1,1,1,1,0}, {1,0,0,0,0,1,1,0},{1,0,1,0,1,1,1,0},{1,0,0,0,0,1,0,1},{1,1,1,1,1,1,1,0}};
 
