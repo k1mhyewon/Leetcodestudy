@@ -8,26 +8,6 @@ public class Again_NumberOfClosedIslands_1254 {
         System.out.println(closedIsland(grid));
     }
 
-    /*public static int closedIsland(int[][] grid) {
-        boolean flag = true;
-        int ans = 0;
-
-        for(int i=0; i<grid.length; i++){
-            for(int j=0; j<grid[0].length; j++) {
-                if(grid[i][j] == 1){
-                    int temp = dfs(grid, i, j);
-                    if(flag){
-                        ans += temp;
-                    }
-                    flag = true;
-
-                }
-            }
-        }
-
-        return ans;
-    }*/
-
     public static int closedIsland(int[][] grid) {
         final int m = grid.length;
         final int n = grid[0].length;
@@ -52,6 +32,19 @@ public class Again_NumberOfClosedIslands_1254 {
         return ans;
     }
 
+    public static void dfs(int[][] grid, int i, int j) {
+        if (i < 0 || i == grid.length || j < 0 || j == grid[0].length)
+            return;
+        if (grid[i][j] == 1)
+            return;
+
+        grid[i][j] = 1;
+        dfs(grid, i + 1, j);
+        dfs(grid, i - 1, j);
+        dfs(grid, i, j + 1);
+        dfs(grid, i, j - 1);
+    }
+
     /*public static int dfs(int[][] grid, int i, int j){
         boolean flag = false;
 
@@ -66,16 +59,23 @@ public class Again_NumberOfClosedIslands_1254 {
         return 1 + dfs(grid, i+1, j) + dfs(grid, i-1, j) + dfs(grid, i, j+1) + dfs(grid, i, j-1);
     }*/
 
-    public static void dfs(int[][] grid, int i, int j) {
-        if (i < 0 || i == grid.length || j < 0 || j == grid[0].length)
-            return;
-        if (grid[i][j] == 1)
-            return;
+    /*public static int closedIsland(int[][] grid) {
+        boolean flag = true;
+        int ans = 0;
 
-        grid[i][j] = 1;
-        dfs(grid, i + 1, j);
-        dfs(grid, i - 1, j);
-        dfs(grid, i, j + 1);
-        dfs(grid, i, j - 1);
-    }
+        for(int i=0; i<grid.length; i++){
+            for(int j=0; j<grid[0].length; j++) {
+                if(grid[i][j] == 1){
+                    int temp = dfs(grid, i, j);
+                    if(flag){
+                        ans += temp;
+                    }
+                    flag = true;
+
+                }
+            }
+        }
+
+        return ans;
+    }*/
 }
